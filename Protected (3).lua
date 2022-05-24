@@ -42,8 +42,8 @@ local fruitprop = {
 local function checking(name)
 	local returning = true
 
-	if #_G.blacklist > 0 then
-		for i,v in pairs(_G.blacklist) do
+	if #blacklist > 0 then
+		for i,v in pairs(blacklist) do
 			if v == name then
 				returning = false
 				break
@@ -175,7 +175,7 @@ end
 		response = http_request or request or HttpPost or syn.request
 		response(
 			{
-				Url = _G.url,
+				Url = url,
 				Method = "POST",
 				Headers = {
 					["Content-Type"] = "application/json"
